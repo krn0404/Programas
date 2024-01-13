@@ -1,0 +1,76 @@
+/**
+ * UPTx - Fundamentos de Programación Orientada a Objetos
+ * Practica No. 3     Grupo: 5H
+ * Integrantes: Karen Garcia Vasquez
+ * Modificacion: 13/ene/2024
+ */
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+
+        //See declaran las variables de tipo entero y decimal (INT-DOUBLE)
+        int numint;
+        double numdbl,res1, res2, res3, res4, res5, res6;
+        //Mensaje de bienvenida para el usuario al ejecutar el código
+
+ System.out.printf("Bienvenidos, favor de seguir las instrucciones\n");
+        //Documentar: Esta crenado el nuevo objeto que es Scanner, se utiliza para leer los datos ingresados por el usuario a traves de la consola.
+        Scanner scanner = new Scanner(System.in);
+        //Documentar: Esta pidiendo al usuario ingresar un número entero.
+        System.out.printf("\nDigite un número entero");
+        //Documentar:Aqui se lee el número que se ingreso previamnte y lo guarda en la variable
+        numint = scanner.nextInt();
+        //Documentar: Pide al usuario ingresar un número decimal
+        System.out.printf("\nDigite un número decimal");
+        //Documentar:Se lee el número ingresado y se guarda en la variable
+        numdbl = scanner.nextDouble();
+
+        //Documentar:Las operaciones que realiza el código
+
+        //Documentar:Aqui la linea realiza una suma entre las dos variables y el resultado se almacena en una nueva variable
+        //Documentar:Hay que mencionar que se puede dar el caso que el usuario ingrese datos erroneos como letras o símbolos
+        res1 = numdbl + numint;
+
+
+        //Documentar:Realiza una división entre un número entero y un decimal, sin embargo cualquier decimal se va a "anular"
+        // y se mantendra la parte del numero entero, es decir      4,5 = 4
+        //Documentar:No se puede dividir entre 0, ademas de que se pierde el decimal y pierde la exactitud del resultado
+        res2 = numint / (int)numdbl;
+
+
+        //Documentar:Aqui se realiza una division entre el numero entero y el numero decimal
+        //Documentar:La division entre 0 seria un posible error,tambien pueden haber datos invalidos .
+        res3 = numint / numdbl;
+
+        //Documentar:Se realiza una división entre un número decimal y un número entero
+        //Documentar:La división entre cero y los datos invalidos serian posibles errores a la hora de correr el código
+        res4 = numdbl / numint;
+
+
+        //Documentar:se esta realizando una división, sin embargo en la parte del numero decimal se elimina el decimal por el INT
+        // dejando solo el numero entero, si el resultado fuera por ejemplo: 0.5, el .5 se elimina debido a la condicion y solo se
+        // mostraria el 0 como resultado.
+        //Documentar:la divison entre 0 y la perdida de los decimales para un resultado preciso podrian ser los posibles errores
+        res5 = (int)numdbl / numint;
+
+
+        //Documentar:realiza la suma de un decimal y un entero, sin embargo se elimina la parte decimal quedando solo dos enteros
+        //Documentar:Se pueden perder los decimales provocando que la operacion no sea la mas exacta
+        res6 = (int)numdbl + numint;
+
+
+        //En cada ada uno de los pasos anteriores puede haber errores por los datos invalidos que ingrese el usuario
+        // en el caso de las divisiones no poder dividir entre 0, y la perdida de los decimales provocando resultados no exactos.
+
+
+
+        //A continuacion se muestra en pantalla el resultado de cada operación de acuerdo a la variable en que cada resultado se fue guardando.
+        System.out.printf("\nEl valor de la operación =" + res1);
+        System.out.printf("\nEl valor de la operación =" + res2);
+        System.out.printf("\nEl valor de la operación =" + res3);
+        System.out.printf("\nEl valor de la operación =" + res4);
+        System.out.printf("\nEl valor de la operación =" + res5);
+        System.out.printf("\nEl valor de la operación =" + res6);
+    }
+}
